@@ -21,3 +21,6 @@ npm run build
 
 ## 이미지
 Unsplash의 외부 사진 URL을 사용합니다. 실제 배포 전 이미지 사용 조건, 적합성, 접근 가능성을 확인하고 자체 라이선스 확보 이미지를 /public에 저장하는 것을 권장합니다.
+
+## Local images
+Images are served from `public/images/`. Included WebP files are gradient placeholders, not photographs. Replace with licensed photos using the same filenames. No external Unsplash dependency.
