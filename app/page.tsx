@@ -1,15 +1,84 @@
-import {ArrowUpRight, ArrowRight, Compass, CalendarRange, House, Ticket, MapPin, Clock3, Wallet, Sparkles} from 'lucide-react';
+import { SERVICES } from '@/lib/services';
 
-const services = [
-  {id:'now',name:'NOW',tag:'오늘 · 가까운 즐거움',title:'오늘 어디 가지?',desc:'내 주변 공연·전시·축제와 당일 나들이',url:'https://map.showday.kr',action:'오늘 즐길 곳 찾기',photo:'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=85',alt:'사람들이 함께 즐기는 야외 문화 행사',icon:Compass,detail:'내 위치 · 남는 시간'},
-  {id:'travel',name:'TRAVEL',tag:'여행 · 일정 계획',title:'여행을 계획하고 싶다면',desc:'목적지·교통·숙소·일정·예산을 한 번에',url:'https://travel.showday.kr',action:'여행 일정 만들기',photo:'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=85',alt:'산과 호수를 따라 이어지는 여행지 풍경',icon:CalendarRange,detail:'여행지 · 동선 · 예산'},
-  {id:'stay',name:'STAY',tag:'장기 체류 · 준비 중',title:'그곳에서 살아볼까?',desc:'일주일·한 달 살기, 숙소와 생활 준비',url:'',action:'서비스 준비 중',photo:'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=1200&q=85',alt:'정원과 자연이 있는 아늑한 장기 체류 숙소',icon:House,detail:'머무는 여행 · 생활비'},
-  {id:'venue',name:'VENUE',tag:'공연장 · 공연 전후',title:'공연 가는 날이라면',desc:'공연장 주변 맛집·카페·주차·편의시설',url:'https://seoularena.showday.kr',action:'공연장 주변 살펴보기',photo:'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=1200&q=85',alt:'무대 조명과 관객이 있는 라이브 공연장',icon:Ticket,detail:'공연 시간 · 주변 즐길 거리'},
-];
-export default function Home(){return <>
-<header className="header"><div className="wrap nav"><a className="brand" href="/" aria-label="SHOWDAY 홈">SHOWDAY<span>.</span></a><nav aria-label="서비스 메뉴"><a href="#services">서비스 선택</a><a href="https://map.showday.kr">오늘 즐기기</a><a href="https://travel.showday.kr">여행 계획</a><a href="https://seoularena.showday.kr">공연장 주변</a></nav><a className="nav-cta" href="#services">어디로 갈까요? <ArrowRight size={16}/></a></div></header>
-<main><section className="intro wrap"><div className="intro-label"><Sparkles size={15}/> YOUR DAY, YOUR WAY</div><h1>오늘, <span>어떤 시간을 보내고 싶으세요?</span></h1><p>가까운 나들이부터 여행 계획, 공연장 주변 즐길 거리까지. 목적에 맞게 바로 시작하세요.</p><div className="quick"><span><MapPin size={15}/> 가까운 곳 찾기</span><span><Clock3 size={15}/> 일정 계획하기</span><span><Wallet size={15}/> 여행 예산 확인</span></div></section>
-<section id="services" className="wrap services" aria-label="SHOWDAY 서비스 선택"><div className="section-top"><h2>원하는 서비스를 선택하세요</h2><span>4가지 여행·문화 경험</span></div><div className="service-grid">{services.map(s=><article key={s.id} id={s.id} className={'service-card '+s.id}><div className="photo" style={{backgroundImage:`linear-gradient(180deg,rgba(8,20,30,.04) 42%,rgba(8,20,30,.53)),url('${s.photo}')`}} role="img" aria-label={s.alt}><span className="category">{s.tag}</span><span className="photo-name">{s.name}</span></div><div className="card-body"><div className="card-title"><span className="icon-wrap"><s.icon size={20}/></span><h3>{s.title}</h3></div><p>{s.desc}</p><div className="card-bottom"><span>{s.detail}</span>{s.url?<a href={s.url} className="go" aria-label={`${s.name} ${s.action}`}>{s.action}<ArrowUpRight size={17}/></a>:<span className="soon">COMING SOON</span>}</div></div></article>)}</div></section>
-<section className="bottom wrap"><div><strong>SHOWDAY</strong><h2>오늘의 즐거움부터 새로운 여행까지.</h2><p>공연과 문화, 여행과 머무름을 하나의 경험으로 연결합니다.</p></div><a href="https://travel.showday.kr">여행 계획 시작하기 <ArrowUpRight size={18}/></a></section></main>
-<footer className="footer"><div className="wrap footer-inner"><span>© {new Date().getFullYear()} SHOWDAY</span><div><a href="https://map.showday.kr">NOW</a><a href="https://travel.showday.kr">TRAVEL</a><a href="#stay">STAY</a><a href="https://seoularena.showday.kr">VENUE</a></div></div></footer>
-</>}
+function Icon({ id }: { id: string }) {
+  const p = { fill: 'none', stroke: '#fff', strokeWidth: 2.2, strokeLinecap: 'round', strokeLinejoin: 'round' } as const;
+  return (
+    <svg viewBox="0 0 48 48" width="34" height="34" aria-hidden="true">
+      {id === 'now' && (<g {...p}><path d="M24 6c-7 0-12 5-12 11 0 8 12 24 12 24s12-16 12-24c0-6-5-11-12-11z" /><circle cx="24" cy="17" r="4.5" /></g>)}
+      {id === 'travel' && (<g {...p}><path d="M6 24 42 8 30 42 23 28z" /><path d="M23 28 42 8" /></g>)}
+      {id === 'stay' && (<g {...p}><path d="M6 22 24 8l18 14" /><path d="M10 20v20h28V20" /><path d="M20 40V28h8v12" /></g>)}
+      {id === 'venue' && (<g {...p}><path d="M24 7l4 9 10 1-7.5 7 2.2 10L24 29l-8.7 5 2.2-10L10 17l10-1z" /></g>)}
+    </svg>
+  );
+}
+
+export default function Home() {
+  return (
+    <>
+      <header className="nav">
+        <div className="in">
+          <a className="brand" href="/">SHOW<b>DAY</b></a>
+          <nav aria-label="서비스">
+            {SERVICES.map((s) => s.live
+              ? <a key={s.id} href={s.url}>{s.label}</a>
+              : <span key={s.id} className="soon">{s.label}</span>)}
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section className="hero">
+          <svg className="art" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stopColor="#241658" /><stop offset=".4" stopColor="#6A3FA8" />
+                <stop offset=".68" stopColor="#E0587E" /><stop offset=".86" stopColor="#FF9A5A" />
+                <stop offset="1" stopColor="#FFC76A" />
+              </linearGradient>
+              <radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop offset="0" stopColor="#FFF3C4" /><stop offset="1" stopColor="#FFC76A" stopOpacity="0" /></radialGradient>
+            </defs>
+            <rect width="1200" height="420" fill="url(#sky)" />
+            <circle cx="860" cy="300" r="120" fill="url(#sun)" />
+            <circle cx="860" cy="300" r="46" fill="#FFF0B8" />
+            {[[120,60],[260,110],[420,40],[560,90],[700,50],[980,70],[1100,120],[60,150]].map(([x,y],i)=>(<circle key={i} cx={x} cy={y} r={i%3?1.6:2.4} fill="#fff" opacity=".8" />))}
+            <path d="M0 330 C140 290 260 340 420 310 S700 280 860 320 1060 300 1200 330V420H0Z" fill="#3A2273" opacity=".75" />
+            <path d="M0 370 C180 340 320 380 520 355 S860 340 1000 366 1130 360 1200 372V420H0Z" fill="#241658" />
+          </svg>
+          <div className="copy">
+            <p className="eyebrow">SHOWDAY</p>
+            <h1>오늘 어디로<br />떠나볼까요?</h1>
+            <p className="sub">가까운 나들이부터 특별한 여행, 오래 머무는 시간까지.<br />목적에 맞는 서비스를 골라보세요.</p>
+          </div>
+        </section>
+
+        <section className="cards" aria-label="SHOWDAY 서비스">
+          {SERVICES.map((s) => {
+            const body = (
+              <>
+                <i className="ic" style={{ background: `linear-gradient(150deg, ${s.hue[0]}, ${s.hue[1]})` }}><Icon id={s.id} /></i>
+                <div className="tx">
+                  <span className="lb">{s.label}</span>
+                  <b className="q">{s.q}</b>
+                  <span className="ds">{s.desc}</span>
+                </div>
+                <span className={`go${s.live ? '' : ' off'}`}>{s.cta}{s.live ? ' →' : ''}</span>
+              </>
+            );
+            return s.live
+              ? <a key={s.id} className="card" href={s.url}>{body}</a>
+              : <div key={s.id} className="card dis" aria-disabled="true">{body}</div>;
+          })}
+        </section>
+
+        <p className="flow">공연을 발견하고 → 주변에서 시간을 보내고 → 여행으로 넓히고 → 오래 머무는 경험까지, SHOWDAY가 이어 드립니다.</p>
+      </main>
+
+      <footer>
+        <div className="in">
+          <span>© SHOWDAY</span>
+          <span>정보는 참고용이며 일정·요금은 현장에서 달라질 수 있어요.</span>
+        </div>
+      </footer>
+    </>
+  );
+}
