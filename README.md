@@ -1,14 +1,23 @@
-# SHOWDAY HUB (showday.kr 통합 입구)
+# SHOWDAY HUB
+SHOWDAY의 통합 입구용 독립 Next.js 프로젝트입니다.
 
-서비스 카드 4개(NOW · TRAVEL · STAY · VENUE)와 공통 상단 메뉴만 있는 가벼운 페이지입니다. DB·API·키 없음.
+## 서비스 링크
+- NOW: https://map.showday.kr
+- TRAVEL: https://travel.showday.kr
+- STAY: 준비 중
+- VENUE: https://seoularena.showday.kr
 
-## 수정
-- 서비스 주소·이름·문구: `lib/services.ts` 한 곳 (STAY가 열리면 `live:true`와 url만 바꾸면 됩니다)
-- 색·배치: `app/globals.css`
+## 실행
+```bash
+npm install
+npm run dev
+npm run build
+```
 
-## 배포 (기존 서비스 중단 없이)
-1. GitHub에 새 저장소 `showday-hub` 생성 후 업로드
-2. Vercel > Add New Project > `showday-hub` (환경변수 없음)
-3. 임시 주소(*.vercel.app)에서 화면·링크 확인
-4. 기존 `showday.kr` API를 쓰는 곳(map의 SHOWDAY_API_BASE 등)을 먼저 다른 주소로 옮긴 뒤
-5. Vercel Settings > Domains에서 `showday.kr`을 이 프로젝트로 이동
+## 배포 시 주의
+**showday.kr을 바로 연결하지 마세요.** 먼저 Vercel의 임시 주소에서 검증하세요.
+기존 showday.kr/api/events/search API를 사용하는 MAP 등 서비스의 의존성을 조사하고, 기존 API를 api.showday.kr 등의 독립 주소로 이전해 정상 동작을 검증한 후에만 대표 도메인을 전환해야 합니다.
+본 프로젝트에는 공연 API가 없으며 기존 API를 대체하지 않습니다.
+
+## 이미지
+Unsplash의 외부 사진 URL을 사용합니다. 실제 배포 전 이미지 사용 조건, 적합성, 접근 가능성을 확인하고 자체 라이선스 확보 이미지를 /public에 저장하는 것을 권장합니다.
