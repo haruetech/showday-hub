@@ -1,4 +1,4 @@
-import {ArrowUpRight, Compass, CalendarDays, House, Ticket, MapPin, Route, Coffee, Clock3} from 'lucide-react';
+import {ArrowUpRight, Compass, CalendarDays, House, Ticket, MapPin, Route, Coffee, Clock3, MessageCircle} from 'lucide-react';
 
 const services = [
  {id:'now',name:'NOW',eyebrow:'가까운 문화생활',title:'공연·전시·나들이',desc:'내 주변에서 즐길 공연과 전시, 축제를 찾아보세요.',url:'https://map.showday.kr',cta:'즐길 거리 찾기',photo:'/images/now.webp',alt:'현장 조명과 사람들이 어우러진 문화 축제',icon:Compass},
@@ -29,9 +29,12 @@ export default async function Home(){const biz=await getBiz();const family=parse
 <main className="wrap main"><section className="intro"><div className="intro-copy"><span className="eyebrow">EXPLORE YOUR WAY</span><h1>가고 싶은 곳, <em>즐기고 싶은 순간.</em></h1><p>가까운 문화생활부터 여행 계획, 오래 머무는 시간까지. 원하는 경험을 골라 바로 시작하세요.</p></div><div className="intro-aside"><span><MapPin size={15}/> 주변 발견</span><span><Route size={15}/> 여행 설계</span><span><Clock3 size={15}/> 공연 전후</span></div></section>
 <section className="services" aria-label="SHOWDAY 서비스"><div className="section-heading"><h2>어떤 경험을 찾으세요?</h2><p>아래에서 원하는 서비스를 선택하세요.</p></div><div className="service-grid">{services.map(s=><article key={s.id} id={s.id} className={'service-card '+s.id}><div className="photo" style={{backgroundImage:`linear-gradient(180deg,transparent 35%,rgba(7,17,29,.56)),url("${s.photo}")`}} role="img" aria-label={s.alt}><span className="photo-label">{s.name}</span>{!s.url&&<span className="soon-flag">준비 중</span>}</div><div className="card-body"><span className="card-eyebrow"><s.icon size={15}/>{s.eyebrow}</span><h3>{s.title}</h3><p>{s.desc}</p>{s.url?<a className="card-link" href={s.url}>{s.cta}<ArrowUpRight size={18}/></a>:<span className="card-link disabled">서비스 준비 중</span>}</div></article>)}</div></section>
 <div className="bottom-line"><span><Coffee size={16}/> SHOWDAY — 일상과 여행 사이, 더 많은 경험을 연결합니다.</span><a href="https://travel.showday.kr">여행 계획 시작하기 <ArrowUpRight size={15}/></a></div></main>
-<footer className="footer"><div className="wrap footer-main">
-<div className="footer-top"><div className="footer-links"><a href={`${API_BASE}/terms`}>이용약관</a><a href={`${API_BASE}/privacy`}>개인정보처리방침</a><a href={`${API_BASE}/partnership`}>제휴·광고 문의</a><a href={`${API_BASE}/register`}>공연 등록(주최·기획사)</a><a href={kakao} target="_blank" rel="noopener noreferrer">카카오톡 채널</a></div><details className="family"><summary>FAMILY SITE</summary><ul>{family.map(f=><li key={f.url}><a href={f.url} target="_blank" rel="noopener noreferrer">{f.name}</a></li>)}</ul></details></div>
-{hasBiz&&<p className="footer-biz">상호명 {biz.business_name||'-'} · 대표 {biz.ceo_name||'-'} · 사업자등록번호 {biz.business_reg_no||'-'}{biz.mail_order_no&&<> · 통신판매업신고 {biz.mail_order_no}</>}{biz.address&&<> · 주소 {biz.address}</>}{biz.support_contact&&<> · 고객센터 {biz.support_contact}</>}</p>}
-<div className="footer-inner"><span>© {new Date().getFullYear()} SHOWDAY</span><span>NOW · TRAVEL · STAY · VENUE</span></div>
+<footer className="footer"><div className="wrap fx">
+<div className="fx-top">
+<div className="fx-brand"><a className="fx-logo" href="/" aria-label="SHOWDAY 홈">SHOWDAY<span>.</span></a><p>일상과 여행 사이, 더 많은 경험을 연결합니다.</p><a className="fx-chat" href={kakao} target="_blank" rel="noopener noreferrer"><MessageCircle size={15}/>카카오톡 문의</a></div>
+<nav className="fx-cols" aria-label="하단 메뉴"><div><h4>이용 안내</h4><a href={`${API_BASE}/terms`}>이용약관</a><a href={`${API_BASE}/privacy`}>개인정보처리방침</a></div><div><h4>제휴 · 비즈니스</h4><a href={`${API_BASE}/partnership`}>제휴·광고 문의</a><a href={`${API_BASE}/register`}>공연 등록 (주최·기획사)</a></div></nav>
+</div>
+{hasBiz&&<div className="fx-biz"><p>상호명 {biz.business_name||'-'}<i>·</i>대표 {biz.ceo_name||'-'}<i>·</i>사업자등록번호 {biz.business_reg_no||'-'}{biz.mail_order_no&&<><i>·</i>통신판매업신고 {biz.mail_order_no}</>}</p><p>{biz.address&&<>주소 {biz.address}</>}{biz.address&&biz.support_contact&&<i>·</i>}{biz.support_contact&&<>고객센터 {biz.support_contact}</>}</p></div>}
+<div className="fx-bottom"><span>© {new Date().getFullYear()} SHOWDAY. All rights reserved.</span><details className="family"><summary>FAMILY SITE</summary><ul>{family.map(f=><li key={f.url}><a href={f.url} target="_blank" rel="noopener noreferrer">{f.name}</a></li>)}</ul></details></div>
 </div></footer>
 </div>}
