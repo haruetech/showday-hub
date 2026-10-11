@@ -1,4 +1,6 @@
 import {MessageCircle} from 'lucide-react';
+import Flip from './flip';
+import FamilySite from './FamilySite';
 
 export const API_BASE = process.env.SHOWDAY_API_BASE || 'https://api.showday.kr';
 
@@ -21,14 +23,15 @@ function parseFamily(raw?: string) {
 }
 
 export const NAV = [
-  { name: 'NOW', url: 'https://map.showday.kr' },
-  { name: 'TRAVEL', url: 'https://travel.showday.kr' },
-  { name: 'STAY', url: 'https://stay.showday.kr' },
-  { name: 'VENUE', url: 'https://seoularena.showday.kr' },
+  { name: 'NOW', ko: '지금', url: 'https://map.showday.kr' },
+  { name: 'TRAVEL', ko: '여행', url: 'https://travel.showday.kr' },
+  { name: 'STAY', ko: '한달살기', url: 'https://stay.showday.kr' },
+  { name: 'VENUE', ko: '공연장', url: 'https://seoularena.showday.kr' },
 ];
 
+// 상단 메뉴: 평소엔 한글, 마우스를 올리면 영문으로 부드럽게 바뀝니다. (터치 화면에서는 한글만 표시)
 export function SiteHeader({ tag = true }: { tag?: boolean }) {
-  return <header className="header"><div className="wrap nav"><a className="brand" href="/" aria-label="SHOWDAY 홈">SHOWDAY<span>.</span></a><div className="nav-right">{tag && <span className="nav-tag">공연에서 여행까지, 나에게 맞는 경험</span>}{NAV.map(n => <a key={n.name} className="nav-pill" href={n.url} target="_blank" rel="noopener noreferrer">{n.name}</a>)}</div></div></header>;
+  return <header className="header"><div className="wrap nav"><a className="brand" href="/" aria-label="SHOWDAY 홈">SHOWDAY<span>.</span></a><div className="nav-right">{tag && <span className="nav-tag">공연에서 여행까지, 나에게 맞는 경험</span>}{NAV.map(n => <a key={n.name} className="nav-pill nav-flip" href={n.url} target="_blank" rel="noopener noreferrer" aria-label={`${n.ko} (${n.name})`}><span className="nf nf-ko">{n.ko}</span><span className="nf nf-en" aria-hidden="true">{n.name}</span></a>)}</div></div></header>;
 }
 
 export function SiteFooter({ biz }: { biz: Biz }) {
@@ -37,12 +40,12 @@ export function SiteFooter({ biz }: { biz: Biz }) {
   const hasBiz = Boolean(biz.business_name || biz.ceo_name || biz.business_reg_no);
   return <footer className="footer ft"><div className="wrap">
     <nav className="ft-links" aria-label="하단 메뉴">
-      <a href={kakao} target="_blank" rel="noopener noreferrer"><MessageCircle size={16}/>카카오톡 문의</a>
-      <a href="/partnership">제휴·광고 문의</a>
-      <a href="/register">공연 등록</a>
+      <a className="fh" href={kakao} target="_blank" rel="noopener noreferrer"><MessageCircle size={16}/><Flip ko="카카오톡 문의" en="KAKAOTALK"/></a>
+      <a className="fh" href="/partnership"><Flip ko="제휴·광고 문의" en="PARTNERSHIP"/></a>
+      <a className="fh" href="/register"><Flip ko="공연 등록" en="LIST YOUR SHOW"/></a>
     </nav>
     {hasBiz && <p className="ft-biz">상호명 {biz.business_name || '-'}<i>·</i>대표 {biz.ceo_name || '-'}<i>·</i>사업자등록번호 {biz.business_reg_no || '-'}{biz.mail_order_no && <><i>·</i>통신판매업신고 {biz.mail_order_no}</>}{biz.address && <><i>·</i>주소 {biz.address}</>}{biz.support_contact && <><i>·</i>고객센터 {biz.support_contact}</>}</p>}
     <div className="ft-bottom"><span>© {new Date().getFullYear()} SHOWDAY</span>
-      <details className="family"><summary>FAMILY SITE</summary><ul>{family.map(f => <li key={f.url}><a href={f.url} target="_blank" rel="noopener noreferrer">{f.name}</a></li>)}</ul></details></div>
+      <FamilySite items={family}/></div>
   </div></footer>;
 }
