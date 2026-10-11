@@ -35,16 +35,14 @@ export function SiteFooter({ biz }: { biz: Biz }) {
   const family = parseFamily(biz.family_sites);
   const kakao = biz.kakao_channel_id ? `https://pf.kakao.com/${biz.kakao_channel_id}` : 'https://pf.kakao.com/_SnjrX';
   const hasBiz = Boolean(biz.business_name || biz.ceo_name || biz.business_reg_no);
-  return <footer className="footer"><div className="wrap fx">
-    <div className="fx-row">
-      <a className="fx-logo" href="/" aria-label="SHOWDAY 홈">SHOWDAY<span>.</span></a>
-      <nav className="fx-links" aria-label="하단 메뉴"><a href="/partnership">제휴·광고 문의</a><a href="/register">공연 등록 (주최·기획사)</a></nav>
-      <div className="fx-right"><a className="fx-chat" href={kakao} target="_blank" rel="noopener noreferrer"><MessageCircle size={14}/>카카오톡 문의</a>
-        <details className="family"><summary>FAMILY SITE</summary><ul>{family.map(f => <li key={f.url}><a href={f.url} target="_blank" rel="noopener noreferrer">{f.name}</a></li>)}</ul></details></div>
-    </div>
-    <div className="fx-sub">
-      {hasBiz && <p className="fx-biz">상호명 {biz.business_name || '-'}<i>·</i>대표 {biz.ceo_name || '-'}<i>·</i>사업자등록번호 {biz.business_reg_no || '-'}{biz.mail_order_no && <><i>·</i>통신판매업신고 {biz.mail_order_no}</>}{biz.address && <><i>·</i>주소 {biz.address}</>}{biz.support_contact && <><i>·</i>고객센터 {biz.support_contact}</>}</p>}
-      <span className="fx-copy">© {new Date().getFullYear()} SHOWDAY. All rights reserved.</span>
-    </div>
+  return <footer className="footer ft"><div className="wrap">
+    <nav className="ft-links" aria-label="하단 메뉴">
+      <a href={kakao} target="_blank" rel="noopener noreferrer"><MessageCircle size={16}/>카카오톡 문의</a>
+      <a href="/partnership">제휴·광고 문의</a>
+      <a href="/register">공연 등록</a>
+    </nav>
+    {hasBiz && <p className="ft-biz">상호명 {biz.business_name || '-'}<i>·</i>대표 {biz.ceo_name || '-'}<i>·</i>사업자등록번호 {biz.business_reg_no || '-'}{biz.mail_order_no && <><i>·</i>통신판매업신고 {biz.mail_order_no}</>}{biz.address && <><i>·</i>주소 {biz.address}</>}{biz.support_contact && <><i>·</i>고객센터 {biz.support_contact}</>}</p>}
+    <div className="ft-bottom"><span>© {new Date().getFullYear()} SHOWDAY</span>
+      <details className="family"><summary>FAMILY SITE</summary><ul>{family.map(f => <li key={f.url}><a href={f.url} target="_blank" rel="noopener noreferrer">{f.name}</a></li>)}</ul></details></div>
   </div></footer>;
 }

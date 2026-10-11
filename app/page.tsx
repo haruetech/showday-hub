@@ -1,4 +1,4 @@
-import {ArrowUpRight, Compass, CalendarDays, House, Ticket, MapPin, Route, Clock3} from 'lucide-react';
+import {ArrowUpRight, Compass, CalendarDays, House, Ticket} from 'lucide-react';
 import {getBiz, SiteHeader, SiteFooter} from '../lib/site';
 
 const services = [
@@ -9,8 +9,15 @@ const services = [
 ];
 
 export default async function Home(){const biz=await getBiz();return <div className="site home">
-<SiteHeader/>
-<main className="wrap main"><section className="intro"><div className="intro-copy"><span className="eyebrow">EXPLORE YOUR WAY</span><h1>가고 싶은 곳, <em>즐기고 싶은 순간.</em></h1><p>가까운 문화생활부터 여행 계획, 오래 머무는 시간까지. 원하는 경험을 골라 바로 시작하세요.</p></div><div className="intro-aside"><span><MapPin size={15}/> 주변 발견</span><span><Route size={15}/> 여행 설계</span><span><Clock3 size={15}/> 공연 전후</span></div></section>
-<section className="services" aria-label="SHOWDAY 서비스"><div className="section-heading"><h2>어떤 경험을 찾으세요?</h2><p>아래에서 원하는 서비스를 선택하세요.</p></div><div className="service-grid">{services.map(s=>{const inner=<><div className="photo" style={{backgroundImage:`linear-gradient(180deg,transparent 35%,rgba(7,17,29,.56)),url("${s.photo}")`}} role="img" aria-label={s.alt}><span className="photo-label">{s.name}</span></div><div className="card-body"><span className="card-eyebrow"><s.icon size={15}/>{s.eyebrow}</span><h3>{s.title}</h3><p>{s.desc}</p><span className="card-link">{s.cta}<ArrowUpRight size={18}/></span></div></>;return <a key={s.id} id={s.id} className={'service-card '+s.id} href={s.url} target="_blank" rel="noopener noreferrer" aria-label={`${s.name} — ${s.title} (새 창)`}>{inner}</a>})}</div></section></main>
+<SiteHeader tag={false}/>
+<main className="wrap stage-wrap">
+<section className="hero"><h1>가고 싶은 곳, 즐기고 싶은 순간.</h1><p>공연·전시부터 여행, 한 달 살기까지. 마음 가는 곳을 골라보세요.</p></section>
+<section className="stage" aria-label="SHOWDAY 서비스">{services.map(s=><a key={s.id} id={s.id} className="panel" href={s.url} target="_blank" rel="noopener noreferrer" aria-label={`${s.name} — ${s.title} (새 창)`}>
+<span className="panel-bg" style={{backgroundImage:`url("${s.photo}")`}} role="img" aria-label={s.alt}/><span className="panel-shade"/>
+<span className="panel-go"><ArrowUpRight size={18}/></span>
+<span className="panel-body"><span className="panel-eyebrow"><s.icon size={15}/>{s.eyebrow}</span><strong className="panel-name">{s.name}</strong><span className="panel-title">{s.title}</span>
+<span className="panel-more"><span className="panel-desc">{s.desc}</span><span className="panel-cta">{s.cta}<i><ArrowUpRight size={16}/></i></span></span></span>
+</a>)}</section>
+</main>
 <SiteFooter biz={biz}/>
 </div>}
