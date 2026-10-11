@@ -4,7 +4,7 @@ SHOWDAY의 통합 입구용 독립 Next.js 프로젝트입니다.
 ## 서비스 링크
 - NOW: https://map.showday.kr
 - TRAVEL: https://travel.showday.kr
-- STAY: 준비 중
+- STAY: https://stay.showday.kr
 - VENUE: https://seoularena.showday.kr
 
 ## 실행
