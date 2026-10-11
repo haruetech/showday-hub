@@ -38,7 +38,7 @@ export function SiteFooter({ biz }: { biz: Biz }) {
   return <footer className="footer"><div className="wrap fx">
     <div className="fx-row">
       <a className="fx-logo" href="/" aria-label="SHOWDAY 홈">SHOWDAY<span>.</span></a>
-      <nav className="fx-links" aria-label="하단 메뉴"><a href="/terms">이용약관</a><a href="/privacy">개인정보처리방침</a><a href={`${API_BASE}/partnership`} target="_blank" rel="noopener noreferrer">제휴·광고 문의</a><a href={`${API_BASE}/register`} target="_blank" rel="noopener noreferrer">공연 등록</a></nav>
+      <nav className="fx-links" aria-label="하단 메뉴"><a href="/partnership">제휴·광고 문의</a><a href="/register">공연 등록 (주최·기획사)</a></nav>
       <div className="fx-right"><a className="fx-chat" href={kakao} target="_blank" rel="noopener noreferrer"><MessageCircle size={14}/>카카오톡 문의</a>
         <details className="family"><summary>FAMILY SITE</summary><ul>{family.map(f => <li key={f.url}><a href={f.url} target="_blank" rel="noopener noreferrer">{f.name}</a></li>)}</ul></details></div>
     </div>
