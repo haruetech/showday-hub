@@ -23,11 +23,11 @@ function parseFamily(raw?: string) {
 }
 
 export const NAV = [
-  { name: 'MUSIC', ko: '음악', url: 'https://music.showday.kr' },
-  { name: 'MAP', ko: '지도', url: 'https://map.showday.kr' },
-  { name: 'TRAVEL', ko: '여행', url: 'https://travel.showday.kr' },
-  { name: 'STAY', ko: '한달살기', url: 'https://stay.showday.kr' },
-  { name: 'VENUE', ko: '공연장', url: 'https://venue.showday.kr' },
+  { name: 'MUSIC CREATION', ko: '음악제작', url: 'https://music.showday.kr' },
+  { name: 'VENUES', ko: '공연장', url: 'https://venue.showday.kr' },
+  { name: 'DISCOVER', ko: '지도탐색', url: 'https://map.showday.kr' },
+  { name: 'TRAVEL PLANNER', ko: '여행플랜', url: 'https://travel.showday.kr' },
+  { name: 'LOCAL LIFE', ko: '로컬라이프', url: 'https://stay.showday.kr' },
 ];
 
 // 상단 메뉴: 평소엔 한글, 마우스를 올리면 영문으로 부드럽게 바뀝니다. (터치 화면에서는 한글만 표시)

@@ -336,3 +336,15 @@ h1{font-size:clamp(35px,3.5vw,48px);line-height:1.22;letter-spacing:-.06em;margi
  .showday-one .one-hero-image{inset:0;background-size:cover;background-position:60% center;opacity:.55}
  .showday-one .one-hero-shade{background:linear-gradient(90deg,rgba(6,10,27,.96),rgba(6,10,27,.7))}
 }
+
+/* 2026-10-25 SHOWDAY homepage: premium panoramic background and bilingual hover cards */
+.showday-one .one-hero-image{background-image:url('/images/showday-festival-hero.webp')!important;background-size:cover!important;background-position:center 49%!important}
+.showday-one .one-hero-shade{background:linear-gradient(90deg,rgba(5,9,26,.98) 0%,rgba(7,10,28,.93) 18%,rgba(8,11,30,.74) 31%,rgba(9,12,31,.20) 51%,rgba(8,11,27,.04) 100%),linear-gradient(0deg,rgba(6,10,25,.25),transparent 38%)!important}
+.showday-one .one-card-bilingual{display:grid;align-items:center;min-width:0;flex:1;white-space:nowrap}
+.showday-one .one-card-ko,.showday-one .one-card-en{grid-area:1/1;transition:opacity .22s,transform .25s;overflow:hidden;text-overflow:ellipsis}
+.showday-one .one-card-en{opacity:0;transform:translateY(8px);font-size:clamp(11px,1.05vw,16px);letter-spacing:.01em}
+@media(hover:hover){.showday-one .one-service:hover .one-card-ko,.showday-one .one-service:focus-visible .one-card-ko{opacity:0;transform:translateY(-8px)}.showday-one .one-service:hover .one-card-en,.showday-one .one-service:focus-visible .one-card-en{opacity:1;transform:none}}
+@media(hover:none){.showday-one .one-card-en{display:none}}
+.showday-one .one-service-title strong{font-size:clamp(13px,1.15vw,20px)}
+.showday-one .one-service:nth-child(5) .one-service-info{background:linear-gradient(110deg,#17294c,#243457)!important}
+@media(max-width:650px){.showday-one .one-hero-image{background-position:58% center!important}.showday-one .one-hero-shade{background:linear-gradient(90deg,#070c20f7,#070c20d9 63%,#070c2077)!important}}
