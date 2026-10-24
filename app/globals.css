@@ -194,3 +194,24 @@ h1{font-size:clamp(35px,3.5vw,48px);line-height:1.22;letter-spacing:-.06em;margi
 @media(max-width:700px){.hub-home .header{height:auto;min-height:61px}.hub-home .nav{flex-wrap:wrap;justify-content:center;gap:0;padding:10px 0}.hub-home .brand{width:100%;text-align:center;font-size:24px}.hub-home .nav-right{width:100%;justify-content:center;gap:0;overflow-x:auto}.hub-home .nav-pill{padding:9px 11px;font-size:11px}.hub-hero{grid-template-columns:1fr;gap:22px;min-height:0;padding-top:31px;padding-bottom:30px}.hub-hero h1{font-size:clamp(42px,9vw,61px);margin:17px 0 12px}.hub-hero-copy>p{font-size:13px;line-height:1.8}.hub-hero-foot{margin-top:19px}.hub-music-visual{height:255px;border-radius:21px}.hub-disc{width:195px;height:195px}.hub-disc-label{width:94px;height:94px;font-size:12px}.hub-wave{bottom:14px;height:38px}.hub-orbit-one{width:270px;height:270px}.hub-orbit-two{width:350px;height:350px}.hub-section-heading{align-items:start}.hub-section-heading p{display:none}.hub-service-card{min-height:220px}.hub-card-bottom strong{font-size:16px}}
 @media(max-width:430px){.hub-card-grid{gap:10px}.hub-service-card{min-height:222px;border-radius:13px}.hub-card-top{padding:12px 10px;font-size:12px}.hub-card-bottom{padding:0 10px 12px;gap:6px}.hub-card-bottom strong{font-size:14px}.hub-card-desc{font-size:10px}.hub-card-label,.hub-card-cta{font-size:10px}.hub-actions{gap:8px}.hub-btn{padding:13px 14px;gap:8px;font-size:11px}.hub-bottom-note{gap:8px}.hub-bottom-note p{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.hub-service-card,.hub-card-image,.hub-btn{transition:none!important}}
+
+/* Music-first hub extension: existing MAP/TRAVEL/STAY/VENUE retained */
+.hub-music-zone{padding-top:8px;padding-bottom:48px}
+.hub-music-heading{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:21px}
+.hub-music-heading h2{margin:9px 0 7px;font-size:clamp(25px,2.8vw,38px);letter-spacing:-.06em;color:#17213b;word-break:keep-all}
+.hub-music-heading p{font-size:14px;color:#737f93;margin:0;word-break:keep-all}
+.hub-music-all{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;font-size:12px;font-weight:800;color:#5449c5}
+.hub-music-path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.hub-music-tile{min-height:190px;position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:9px;padding:23px 19px;border:1px solid #e5e6f0;border-radius:19px;background:#fff;color:#18213a;box-shadow:0 8px 22px #18243b0a;transition:transform .2s,box-shadow .2s}
+.hub-music-tile:hover,.hub-music-tile:focus-visible{transform:translateY(-4px);box-shadow:0 18px 30px #18243b1b}
+.hub-music-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:#eeebff;color:#6453cf}
+.hub-music-step{font-size:10px;font-weight:850;letter-spacing:.13em;color:#7165b8}
+.hub-music-tile strong{font-size:19px;letter-spacing:-.045em}
+.hub-music-tile>span:last-of-type{font-size:12px;color:#788297;word-break:keep-all}
+.hub-tile-arrow{position:absolute;right:19px;top:23px;color:#a1a8b9}
+.hub-music-tile-feature{background:linear-gradient(145deg,#373273,#6250c7);border-color:transparent;color:#fff}
+.hub-music-tile-feature .hub-music-icon{background:#ffffff24;color:#fff}
+.hub-music-tile-feature .hub-music-step,.hub-music-tile-feature>span:last-of-type,.hub-music-tile-feature .hub-tile-arrow{color:#e6e0ff}
+.hub-music-disclaimer{font-size:11px;color:#8a94a4;margin:12px 0 0}
+@media(max-width:900px){.hub-music-path{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.hub-music-zone{padding-bottom:33px}.hub-music-heading{align-items:start;flex-direction:column;gap:12px}.hub-music-heading h2{font-size:25px}.hub-music-heading p{font-size:12px}.hub-music-path{gap:9px}.hub-music-tile{min-height:177px;padding:16px 13px;border-radius:13px}.hub-music-tile strong{font-size:16px}.hub-music-tile>span:last-of-type{font-size:11px}.hub-tile-arrow{top:16px;right:12px}.hub-music-disclaimer{font-size:10px}}

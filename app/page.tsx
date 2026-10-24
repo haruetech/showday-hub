@@ -1,4 +1,4 @@
-import {ArrowUpRight, Headphones, MapPinned, Route, House, Ticket, AudioLines, Mic2, Sparkles} from 'lucide-react';
+import {ArrowUpRight, Headphones, MapPinned, Route, House, Ticket, AudioLines, Mic2, Sparkles, Play, Music2, SlidersHorizontal, Users, Disc3} from 'lucide-react';
 import {getBiz, SiteHeader, SiteFooter} from '../lib/site';
 
 const destinations = [
@@ -16,9 +16,9 @@ export default async function Home(){
    <section className="hub-hero wrap" aria-labelledby="hub-title">
     <div className="hub-hero-copy">
      <div className="hub-kicker"><span className="hub-kicker-dot"/> MUSIC · CULTURE · TRAVEL · LIFE</div>
-     <h1 id="hub-title">일상을<br/><em>특별한 경험</em>으로.</h1>
-     <p>음악을 듣고 만들고, 오늘의 문화를 발견하고,<br className="hub-desktop-break"/> 나만의 여행과 새로운 일상을 계획하세요.</p>
-     <div className="hub-actions"><a className="hub-btn hub-btn-primary" href="https://music.showday.kr" target="_blank" rel="noopener noreferrer">SHOWDAY MUSIC <ArrowUpRight size={18}/></a><a className="hub-btn hub-btn-outline" href="https://map.showday.kr" target="_blank" rel="noopener noreferrer">오늘 즐길 거리 <ArrowUpRight size={17}/></a></div>
+     <h1 id="hub-title">음악을 발견하고,<br/><em>나만의 무대를 열다.</em></h1>
+     <p>좋아하는 음악을 듣고, 떠오른 멜로디를 만들고,<br className="hub-desktop-break"/> 공연과 여행으로 이어지는 나만의 SHOWDAY.</p>
+     <div className="hub-actions"><a className="hub-btn hub-btn-primary" href="https://music.showday.kr" target="_blank" rel="noopener noreferrer">음악 듣기 <ArrowUpRight size={18}/></a><a className="hub-btn hub-btn-outline" href="https://music.showday.kr" target="_blank" rel="noopener noreferrer">음악 만들기 알아보기 <ArrowUpRight size={17}/></a></div>
      <div className="hub-hero-foot"><Headphones size={17}/><span>듣는 즐거움에서, 만드는 즐거움까지</span></div>
     </div>
     <div className="hub-music-visual" aria-label="SHOWDAY MUSIC을 상징하는 그래픽">
@@ -28,15 +28,25 @@ export default async function Home(){
       <div className="hub-visual-tag"><Mic2 size={15}/> CREATE YOUR SOUND <Sparkles size={14}/></div>
     </div>
    </section>
+   <section className="hub-music-zone wrap" aria-labelledby="hub-music-title">
+     <div className="hub-music-heading"><div><span className="hub-overline">THE SOUND OF SHOWDAY</span><h2 id="hub-music-title">음악, 듣는 순간부터 만드는 순간까지</h2><p>좋아하는 음악을 발견하고, 나만의 멜로디를 시작해 보세요.</p></div><a href="https://music.showday.kr" target="_blank" rel="noopener noreferrer" className="hub-music-all">MUSIC 둘러보기 <ArrowUpRight size={16}/></a></div>
+     <div className="hub-music-path">
+       <a href="https://music.showday.kr" target="_blank" rel="noopener noreferrer" className="hub-music-tile"><span className="hub-music-icon"><Headphones size={23}/></span><span className="hub-music-step">LISTEN</span><strong>음악 듣기</strong><span>신곡 · 장르 · 플레이리스트</span><ArrowUpRight className="hub-tile-arrow" size={17}/></a>
+       <a href="https://music.showday.kr" target="_blank" rel="noopener noreferrer" className="hub-music-tile hub-music-tile-feature"><span className="hub-music-icon"><Mic2 size={23}/></span><span className="hub-music-step">CREATE</span><strong>음악 만들기</strong><span>허밍에서 시작하는 나만의 곡</span><ArrowUpRight className="hub-tile-arrow" size={17}/></a>
+       <a href="https://music.showday.kr" target="_blank" rel="noopener noreferrer" className="hub-music-tile"><span className="hub-music-icon"><SlidersHorizontal size={23}/></span><span className="hub-music-step">STUDIO</span><strong>음악 스튜디오</strong><span>녹음 · 편곡 · 믹싱</span><ArrowUpRight className="hub-tile-arrow" size={17}/></a>
+       <a href="https://music.showday.kr" target="_blank" rel="noopener noreferrer" className="hub-music-tile"><span className="hub-music-icon"><Users size={23}/></span><span className="hub-music-step">ARTIST & RELEASE</span><strong>아티스트 · 발매</strong><span>아티스트 발견 · 작품 발표</span><ArrowUpRight className="hub-tile-arrow" size={17}/></a>
+     </div>
+     <p className="hub-music-disclaimer">※ MUSIC 세부 기능은 서비스 준비 상황에 따라 순차적으로 연결됩니다. 현재는 MUSIC 홈으로 이동합니다.</p>
+   </section>
    <section className="hub-explore wrap" aria-labelledby="hub-explore-title">
-     <div className="hub-section-heading"><div><span className="hub-overline">EXPLORE SHOWDAY</span><h2 id="hub-explore-title">당신의 하루를 더 풍성하게</h2></div><p>찾고, 계획하고, 머무르고, 즐기는 모든 순간</p></div>
+     <div className="hub-section-heading"><div><span className="hub-overline">EXPLORE SHOWDAY</span><h2 id="hub-explore-title">음악 밖에서도, 즐거움은 계속됩니다</h2></div><p>찾고, 계획하고, 머무르고, 즐기는 모든 순간</p></div>
      <div className="hub-card-grid">{destinations.map(s=><a key={s.id} className="hub-service-card" href={s.url} target="_blank" rel="noopener noreferrer" aria-label={`${s.name}: ${s.title} (새 창)`}>
        <span className="hub-card-image" style={{backgroundImage:`url('${s.photo}')`}}/><span className="hub-card-overlay"/>
        <span className="hub-card-top"><s.icon size={18}/><span>{s.name}</span><ArrowUpRight className="hub-card-arrow" size={18}/></span>
        <span className="hub-card-bottom"><span className="hub-card-label">{s.label}</span><strong>{s.title}</strong><span className="hub-card-desc">{s.desc}</span><span className="hub-card-cta">{s.cta} <ArrowUpRight size={14}/></span></span>
      </a>)}</div>
    </section>
-   <section className="hub-bottom-note wrap"><span className="hub-note-line"/><p>음악에서 여행까지, <strong>당신의 SHOWDAY를 시작하세요.</strong></p><span className="hub-note-line"/></section>
+   <section className="hub-bottom-note wrap"><span className="hub-note-line"/><p>듣고, 만들고, 발견하고, 떠나는 순간. <strong>SHOWDAY에서 이어집니다.</strong></p><span className="hub-note-line"/></section>
   </main>
   <SiteFooter biz={biz}/>
  </div>;
