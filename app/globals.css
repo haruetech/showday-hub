@@ -397,13 +397,41 @@ h1{font-size:clamp(35px,3.5vw,48px);line-height:1.22;letter-spacing:-.06em;margi
   .showday-one .header .brand,.showday-one .one-hero::after{animation:none!important}
 }
 
-/* 2026-10-25: hero typography only. Preserve existing images, layout, links and neon. */
-@media(min-width:1001px){
- .showday-one .one-copy h1{font-size:clamp(32px,2.65vw,48px);line-height:1.25;letter-spacing:-.055em}
+/* Arena signage: illuminate the EXACT pixels of the original panorama.
+   No replacement photo, no duplicate text and no change to hero layout. */
+@media (min-width:1001px) {
+  .showday-one .one-hero-image::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:url('/images/showday-hero-panorama.webp') center center / cover no-repeat;
+    -webkit-mask-image:radial-gradient(ellipse 10% 8% at 64.5% 36%,#000 25%,transparent 100%);
+    mask-image:radial-gradient(ellipse 10% 8% at 64.5% 36%,#000 25%,transparent 100%);
+    mix-blend-mode:screen;
+    animation:showday-arena-neon 4.4s ease-in-out infinite;
+  }
 }
-@media(min-width:651px) and (max-width:1000px){
- .showday-one .one-copy h1{font-size:clamp(30px,3.1vw,39px);line-height:1.25}
+@keyframes showday-arena-neon {
+  0%,100% {opacity:.18;filter:brightness(1.15) saturate(1.05)}
+  18% {opacity:.7;filter:brightness(1.8) saturate(1.2)}
+  32%,70% {opacity:.45;filter:brightness(1.45) saturate(1.12)}
+  85% {opacity:.68;filter:brightness(1.75) saturate(1.2)}
 }
-@media(max-width:650px){
- .showday-one .one-copy h1{font-size:clamp(28px,6.5vw,36px);line-height:1.26}
+@media(prefers-reduced-motion:reduce){
+  .showday-one .one-hero-image::after{animation:none!important;opacity:.35!important}
 }
+
+/* 2026-10-25: bilingual hover legibility fix — no layout or imagery changes */
+@media (hover:hover) {
+ .showday-one .nav-pill.nav-flip:hover .nf-ko,
+ .showday-one .nav-pill.nav-flip:focus-visible .nf-ko {opacity:0!important;transform:translateY(-70%)!important;}
+ .showday-one .nav-pill.nav-flip:hover .nf-en,
+ .showday-one .nav-pill.nav-flip:focus-visible .nf-en {opacity:1!important;transform:translateY(0)!important;visibility:visible!important;color:#f5efff!important;text-shadow:0 0 10px rgba(167,139,250,.55)!important;}
+ .showday-one .one-service:hover .one-card-en,
+ .showday-one .one-service:focus-visible .one-card-en {opacity:1!important;visibility:visible!important;transform:translateY(0)!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;text-shadow:0 1px 4px rgba(0,0,0,.45)!important;}
+ .showday-one .one-service:hover .one-card-ko,
+ .showday-one .one-service:focus-visible .one-card-ko {opacity:0!important;visibility:hidden!important;}
+}
+.showday-one .nav-flip .nf-en {font-size:clamp(10px,.85vw,13px)!important;white-space:nowrap!important;}
+.showday-one .one-card-en {font-size:clamp(11px,1vw,16px)!important;white-space:nowrap!important;}
