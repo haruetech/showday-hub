@@ -18,7 +18,7 @@ export default async function Home(){
      <div className="hub-kicker"><span className="hub-kicker-dot"/> MUSIC · CULTURE · TRAVEL · LIFE</div>
      <h1 id="hub-title">음악을 발견하고,<br/><em>나만의 무대를 열다.</em></h1>
      <p>좋아하는 음악을 듣고, 떠오른 멜로디를 만들고,<br className="hub-desktop-break"/> 공연과 여행으로 이어지는 나만의 SHOWDAY.</p>
-     <div className="hub-actions"><a className="hub-btn hub-btn-primary" href="https://music.showday.kr" target="_blank" rel="noopener noreferrer">음악 듣기 <ArrowUpRight size={18}/></a><a className="hub-btn hub-btn-outline" href="https://music.showday.kr" target="_blank" rel="noopener noreferrer">음악 만들기 알아보기 <ArrowUpRight size={17}/></a></div>
+     <div className="hub-actions"><a className="hub-btn hub-btn-primary" href="https://music.showday.kr/discover/" target="_blank" rel="noopener noreferrer">음악 듣기 <ArrowUpRight size={18}/></a><a className="hub-btn hub-btn-outline" href="https://music.showday.kr/create/humming/" target="_blank" rel="noopener noreferrer">허밍으로 시작하기 <ArrowUpRight size={17}/></a></div>
      <div className="hub-hero-foot"><Headphones size={17}/><span>듣는 즐거움에서, 만드는 즐거움까지</span></div>
     </div>
     <div className="hub-music-visual" aria-label="SHOWDAY MUSIC을 상징하는 그래픽">
@@ -31,12 +31,12 @@ export default async function Home(){
    <section className="hub-music-zone wrap" aria-labelledby="hub-music-title">
      <div className="hub-music-heading"><div><span className="hub-overline">THE SOUND OF SHOWDAY</span><h2 id="hub-music-title">음악, 듣는 순간부터 만드는 순간까지</h2><p>좋아하는 음악을 발견하고, 나만의 멜로디를 시작해 보세요.</p></div><a href="https://music.showday.kr" target="_blank" rel="noopener noreferrer" className="hub-music-all">MUSIC 둘러보기 <ArrowUpRight size={16}/></a></div>
      <div className="hub-music-path">
-       <a href="https://music.showday.kr" target="_blank" rel="noopener noreferrer" className="hub-music-tile"><span className="hub-music-icon"><Headphones size={23}/></span><span className="hub-music-step">LISTEN</span><strong>음악 듣기</strong><span>신곡 · 장르 · 플레이리스트</span><ArrowUpRight className="hub-tile-arrow" size={17}/></a>
-       <a href="https://music.showday.kr" target="_blank" rel="noopener noreferrer" className="hub-music-tile hub-music-tile-feature"><span className="hub-music-icon"><Mic2 size={23}/></span><span className="hub-music-step">CREATE</span><strong>음악 만들기</strong><span>허밍에서 시작하는 나만의 곡</span><ArrowUpRight className="hub-tile-arrow" size={17}/></a>
-       <a href="https://music.showday.kr" target="_blank" rel="noopener noreferrer" className="hub-music-tile"><span className="hub-music-icon"><SlidersHorizontal size={23}/></span><span className="hub-music-step">STUDIO</span><strong>음악 스튜디오</strong><span>녹음 · 편곡 · 믹싱</span><ArrowUpRight className="hub-tile-arrow" size={17}/></a>
-       <a href="https://music.showday.kr" target="_blank" rel="noopener noreferrer" className="hub-music-tile"><span className="hub-music-icon"><Users size={23}/></span><span className="hub-music-step">ARTIST & RELEASE</span><strong>아티스트 · 발매</strong><span>아티스트 발견 · 작품 발표</span><ArrowUpRight className="hub-tile-arrow" size={17}/></a>
+       <a href="https://music.showday.kr/discover/" target="_blank" rel="noopener noreferrer" className="hub-music-tile"><span className="hub-music-icon"><Headphones size={23}/></span><span className="hub-music-step">LISTEN</span><strong>음악 듣기</strong><span>신곡 · 장르 · 플레이리스트</span><ArrowUpRight className="hub-tile-arrow" size={17}/></a>
+       <a href="https://music.showday.kr/create/" target="_blank" rel="noopener noreferrer" className="hub-music-tile hub-music-tile-feature"><span className="hub-music-icon"><Mic2 size={23}/></span><span className="hub-music-step">CREATE</span><strong>음악 만들기</strong><span>허밍에서 시작하는 나만의 곡</span><ArrowUpRight className="hub-tile-arrow" size={17}/></a>
+       <a href="https://music.showday.kr/studio/" target="_blank" rel="noopener noreferrer" className="hub-music-tile"><span className="hub-music-icon"><SlidersHorizontal size={23}/></span><span className="hub-music-step">STUDIO</span><strong>음악 스튜디오</strong><span>녹음 · 편곡 · 믹싱</span><ArrowUpRight className="hub-tile-arrow" size={17}/></a>
+       <a href="https://music.showday.kr/artist/" target="_blank" rel="noopener noreferrer" className="hub-music-tile"><span className="hub-music-icon"><Users size={23}/></span><span className="hub-music-step">ARTIST & RELEASE</span><strong>아티스트 · 발매</strong><span>아티스트 발견 · 작품 발표</span><ArrowUpRight className="hub-tile-arrow" size={17}/></a>
      </div>
-     <p className="hub-music-disclaimer">※ MUSIC 세부 기능은 서비스 준비 상황에 따라 순차적으로 연결됩니다. 현재는 MUSIC 홈으로 이동합니다.</p>
+     <p className="hub-music-disclaimer">※ 각 카드에서 해당 페이지로 이동합니다. 일부 전문 제작·발매 기능은 개발 중입니다.</p>
    </section>
    <section className="hub-explore wrap" aria-labelledby="hub-explore-title">
      <div className="hub-section-heading"><div><span className="hub-overline">EXPLORE SHOWDAY</span><h2 id="hub-explore-title">음악 밖에서도, 즐거움은 계속됩니다</h2></div><p>찾고, 계획하고, 머무르고, 즐기는 모든 순간</p></div>
