@@ -288,3 +288,19 @@ h1{font-size:clamp(35px,3.5vw,48px);line-height:1.22;letter-spacing:-.06em;margi
 .showday-one .one-explore-menu a svg:last-child{margin-left:auto}
 @media(max-width:1000px){.showday-one .one-copy{max-width:75%}.showday-one .one-hero-image{inset:0 0 0 30%;opacity:.68;background-position:right center}}
 @media(max-width:650px){.showday-one .one-hero{overflow:visible}.showday-one .one-copy{max-width:100%;padding:42px 18px}.showday-one .one-hero-image{inset:0;opacity:.36;background-size:contain;background-position:right center}.showday-one .one-copy h1{font-size:clamp(31px,7.6vw,44px)}.showday-one .one-explore-menu{width:min(255px,85vw)}}
+
+/* SHOWDAY video modal: keeps the homepage unchanged behind the overlay. */
+.one-video-overlay{position:fixed;inset:0;z-index:9999;background:rgba(3,7,21,.82);backdrop-filter:blur(7px);display:flex;align-items:center;justify-content:center;padding:20px}
+.one-video-dialog{width:min(920px,100%);background:#121a35;color:#fff;border:1px solid #45527d;border-radius:20px;box-shadow:0 28px 90px #0009;padding:20px}
+.one-video-dialog-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+.one-video-dialog-head span{color:#a8a0ff;font-size:11px;font-weight:800;letter-spacing:.15em}
+.one-video-dialog-head h2{font-size:clamp(18px,2.5vw,25px);margin:5px 0 0;color:white}
+.one-video-close{width:42px;height:42px;display:grid;place-items:center;flex-shrink:0;border:1px solid #697395;background:#ffffff14;color:white;border-radius:12px;cursor:pointer}
+.one-video-close:hover,.one-video-close:focus-visible{background:#ffffff30;outline:2px solid #a8a0ff}
+.one-video-frame{width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#090f23}
+.one-video-frame iframe{display:block;width:100%;height:100%;border:0}
+.one-video-waiting{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:12px;padding:20px;color:#c7baff}
+.one-video-waiting strong{font-size:clamp(18px,3vw,25px);color:white}
+.one-video-waiting p{font-size:13px;color:#b7c1dc;margin:0}
+.one-video-hint{text-align:right;font-size:11px;color:#aeb9d2;margin:12px 0 0}
+@media(max-width:650px){.one-video-overlay{padding:10px}.one-video-dialog{padding:13px;border-radius:14px}.one-video-dialog-head{margin-bottom:12px}.one-video-hint{text-align:center}}
