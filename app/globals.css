@@ -315,3 +315,24 @@ h1{font-size:clamp(35px,3.5vw,48px);line-height:1.22;letter-spacing:-.06em;margi
 .one-about-foot{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:24px;border-top:1px solid #445172;padding-top:18px;color:#acbad5;font-size:12px}.one-about-foot button{background:#7660e8;border:0;color:#fff;padding:11px 16px;border-radius:10px;cursor:pointer;font-weight:700;white-space:nowrap}
 @media(max-width:900px){.one-about-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.one-about-item{min-height:200px}}
 @media(max-width:520px){.one-about-overlay{padding:9px}.one-about-dialog{padding:17px;border-radius:16px;max-height:94vh}.one-about-grid{grid-template-columns:1fr}.one-about-item{min-height:auto}.one-about-foot{align-items:flex-start;flex-direction:column}.one-about-flow span:not(:last-child):after{display:none}}
+
+/* SHOWDAY hero: full-bleed background inspired by MUSIC page; existing content and links retained */
+@media (min-width:1001px){
+ .showday-one .one-hero{overflow:hidden;background:#090f27;border-radius:0 0 12px 12px}
+ .showday-one .one-hero-image{inset:0;background-image:url('/images/showday-hero-art.webp');background-size:cover;background-position:center 53%;background-repeat:no-repeat;opacity:1}
+ .showday-one .one-hero-shade{background:linear-gradient(90deg,rgba(6,10,27,.98) 0%,rgba(7,12,30,.94) 21%,rgba(8,14,35,.77) 37%,rgba(9,15,39,.25) 60%,rgba(9,15,39,.04) 100%),linear-gradient(0deg,rgba(6,10,27,.22),transparent 36%)}
+ .showday-one .one-copy{max-width:min(780px,58vw)}
+}
+@media (min-width:1001px) and (max-width:1400px){
+ .showday-one .one-hero-image{background-position:57% center}
+ .showday-one .one-hero-shade{background:linear-gradient(90deg,rgba(6,10,27,.98) 0%,rgba(7,12,30,.94) 28%,rgba(8,14,35,.72) 48%,rgba(9,15,39,.04) 100%)}
+}
+@media (max-width:1000px){
+ .showday-one .one-hero{overflow:hidden}
+ .showday-one .one-hero-image{inset:0;background-size:cover;background-position:58% center;opacity:.8}
+ .showday-one .one-hero-shade{background:linear-gradient(90deg,rgba(6,10,27,.98),rgba(6,10,27,.85) 46%,rgba(6,10,27,.35))}
+}
+@media (max-width:650px){
+ .showday-one .one-hero-image{inset:0;background-size:cover;background-position:60% center;opacity:.55}
+ .showday-one .one-hero-shade{background:linear-gradient(90deg,rgba(6,10,27,.96),rgba(6,10,27,.7))}
+}
