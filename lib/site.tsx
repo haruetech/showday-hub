@@ -23,7 +23,8 @@ function parseFamily(raw?: string) {
 }
 
 export const NAV = [
-  { name: 'NOW', ko: '지금', url: 'https://map.showday.kr' },
+  { name: 'MUSIC', ko: '음악', url: 'https://music.showday.kr' },
+  { name: 'MAP', ko: '지도', url: 'https://map.showday.kr' },
   { name: 'TRAVEL', ko: '여행', url: 'https://travel.showday.kr' },
   { name: 'STAY', ko: '한달살기', url: 'https://stay.showday.kr' },
   { name: 'VENUE', ko: '공연장', url: 'https://seoularena.showday.kr' },
