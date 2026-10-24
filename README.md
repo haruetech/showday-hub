@@ -24,3 +24,12 @@ Unsplash의 외부 사진 URL을 사용합니다. 실제 배포 전 이미지 �
 
 ## Local images
 Images are served from `public/images/`. Included WebP files are gradient placeholders, not photographs. Replace with licensed photos using the same filenames. No external Unsplash dependency.
+
+
+## 2026-10-25 통합 메인 개편
+- `app/page.tsx`: 음악 5개 경로 + MAP/TRAVEL/STAY/VENUE 4개 경로를 한 화면에서 인지할 수 있도록 재구성
+- `app/globals.css`: `sd26-` 접두사로 새 메인 스타일 격리, 모바일 반응형
+- `lib/site.tsx`: VENUE를 통합 공연장 `https://venue.showday.kr`로 연결
+- 기존 `/partnership`, `/register`, `/privacy`, `/terms`, API route 및 비즈니스 정보 연동 유지
+- 실제 녹음/발매 기능은 연결 사이트의 구현 수준에 따름. 본 ZIP은 허브 UI와 링크만 구현함
+- Vercel Root Directory: 압축 해제 후 `showday-hub-main` 안의 파일을 저장소 루트에 업로드했다면 `./`
