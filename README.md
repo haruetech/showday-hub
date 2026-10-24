@@ -1,18 +1,6 @@
-SHOWDAY 메인 화면 레이아웃 수정본
+SHOWDAY 메인 - 서비스 소개 팝업 수정본
 
-- 오른쪽 히어로 이미지 background-size: contain으로 전체 표시
-- 좌측 문구와 우측 이미지 너비 재조정
-- SHOWDAY 둘러보기: 5개 서비스 선택 드롭다운
-- 소개 영상 버튼: 별도 소개 영상 준비 중 섹션
-- 기존 서비스 카드, 바로가기, 기타 페이지 유지
-
-Next.js 프로젝트 루트 파일을 GitHub 기존 저장소에 반영하세요.
-실제 브라우저/Vercel 배포 검증은 미실시.
-
-
-## 소개 영상 팝업 (2026-10-25)
-- 메인 화면의 SHOWDAY 소개 영상 버튼을 클릭하면 16:9 모달이 열립니다. 메인 페이지는 그대로 유지됩니다.
-- X, ESC, 팝업 바깥 클릭으로 닫습니다. 영상 재생 중 닫으면 iframe이 제거되어 재생이 종료됩니다.
-- 현재 영상이 없으므로 준비 중 메시지가 팝업 안에 표시됩니다.
-- 공식 YouTube 영상 업로드 후 `lib/IntroVideoModal.tsx`의 `SHOWDAY_YOUTUBE_VIDEO_ID`에 URL의 `v=` 뒤 영상 ID를 입력하세요. 전체 URL이 아니라 ID만 입력합니다.
-- SHOWDAY 둘러보기 버튼과 5개 서비스 메뉴는 변경하지 않았습니다.
+변경: SHOWDAY 둘러보기 메뉴 제거, SHOWDAY 서비스 소개 버튼과 5개 서비스 설명 팝업 추가.
+기존 카드 및 하단 링크는 새 탭 열기 유지. 소개 영상은 별도 팝업 유지.
+변경 파일: app/page.tsx, app/globals.css, lib/ServiceIntroModal.tsx
+실제 브라우저/Vercel 배포 검증은 별도로 필요합니다.

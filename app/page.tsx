@@ -1,4 +1,5 @@
 import IntroVideoModal from '../lib/IntroVideoModal';
+import ServiceIntroModal from '../lib/ServiceIntroModal';
 import { Music2, MapPinned, Plane, House, Ticket, ArrowUpRight, PlayCircle, Grid2X2, CalendarDays, LocateFixed, BedDouble, ChevronRight, Search, Mic2 } from 'lucide-react';
 import {getBiz,SiteHeader,SiteFooter} from '../lib/site';
 
@@ -23,10 +24,10 @@ export default async function Home(){
    <div className="one-eyebrow">✦ THE WORLD OF SHOWDAY <span/></div>
    <h1 id="one-heading">음악을 만들고,<br/><em>세상과 만나고,</em><br/>특별한 하루를 즐기다.</h1>
    <p>음악 · 공연 · 문화생활 · 여행 · 한달살기까지, <strong>SHOWDAY 하나로.</strong></p>
-   <div className="one-actions"><details className="one-explore"><summary className="one-primary"><Grid2X2 size={19}/> SHOWDAY 둘러보기 <ArrowUpRight size={17}/></summary><nav className="one-explore-menu" aria-label="SHOWDAY 서비스 선택">{services.map(s=><a href={s.url} key={s.number}><s.icon size={18}/><span>{s.name}</span><ArrowUpRight size={15}/></a>)}</nav></details><IntroVideoModal/></div>
+   <div className="one-actions"><ServiceIntroModal/><IntroVideoModal/></div>
   </div></section>
-  <section id="services" className="one-service-grid" aria-label="SHOWDAY 주요 서비스">{services.map(s=><a className="one-service" key={s.number} href={s.url} aria-label={`${s.name} 서비스로 이동`}><div className="one-service-info"><div className="one-service-title"><span className="one-index">{s.number}</span><s.icon size={24}/><strong>{s.name}</strong><span className="one-arrow"><ArrowUpRight size={19}/></span></div><p>{s.description}</p></div><div className="one-service-photo" style={{backgroundImage:`url(${s.image})`}}/></a>)}</section>
-  <nav className="one-quick" aria-label="SHOWDAY 빠른 서비스">{quick.map(q=><a key={q.name} href={q.url}><span className="one-quick-icon"><q.icon size={24}/></span><span className="one-quick-text"><strong>{q.name}</strong><small>{q.desc}</small></span><ChevronRight className="one-quick-chevron" size={17}/></a>)}</nav>
+  <section id="services" className="one-service-grid" aria-label="SHOWDAY 주요 서비스">{services.map(s=><a className="one-service" key={s.number} href={s.url} target="_blank" rel="noopener noreferrer" aria-label={`${s.name} 서비스 새 탭에서 열기`}><div className="one-service-info"><div className="one-service-title"><span className="one-index">{s.number}</span><s.icon size={24}/><strong>{s.name}</strong><span className="one-arrow"><ArrowUpRight size={19}/></span></div><p>{s.description}</p></div><div className="one-service-photo" style={{backgroundImage:`url(${s.image})`}}/></a>)}</section>
+  <nav className="one-quick" aria-label="SHOWDAY 빠른 서비스">{quick.map(q=><a key={q.name} href={q.url} target="_blank" rel="noopener noreferrer"><span className="one-quick-icon"><q.icon size={24}/></span><span className="one-quick-text"><strong>{q.name}</strong><small>{q.desc}</small></span><ChevronRight className="one-quick-chevron" size={17}/></a>)}</nav>
  </main>
  <SiteFooter biz={biz}/></div>
 }
