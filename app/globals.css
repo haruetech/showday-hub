@@ -348,3 +348,17 @@ h1{font-size:clamp(35px,3.5vw,48px);line-height:1.22;letter-spacing:-.06em;margi
 .showday-one .one-service-title strong{font-size:clamp(13px,1.15vw,20px)}
 .showday-one .one-service:nth-child(5) .one-service-info{background:linear-gradient(110deg,#17294c,#243457)!important}
 @media(max-width:650px){.showday-one .one-hero-image{background-position:58% center!important}.showday-one .one-hero-shade{background:linear-gradient(90deg,#070c20f7,#070c20d9 63%,#070c2077)!important}}
+
+/* SHOWDAY 2026-10-25 final corrections */
+.showday-one .one-hero-image{background-image:url('/images/showday-hero-panorama.webp')!important;background-size:cover!important;background-position:center center!important;opacity:1!important}
+.showday-one .one-hero-shade{background:linear-gradient(90deg,rgba(6,10,28,.42) 0%,rgba(6,10,28,.16) 38%,transparent 70%)!important}
+.showday-one .one-service:nth-child(4),.showday-one .one-service:nth-child(4) .one-service-info{background:#173354!important}
+.showday-one .one-actions{align-items:stretch;gap:12px}
+.showday-one .one-actions>button{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-width:238px;min-height:49px;padding:12px 18px;border-radius:12px;font-size:14px;font-weight:800;line-height:1.25;white-space:nowrap;cursor:pointer}
+.showday-one .one-actions>button svg{flex-shrink:0}
+.showday-one .one-service-photo{background-size:cover;background-position:center center}
+.showday-one .nav-flip{min-width:112px;min-height:24px;place-items:center;color:#fff!important}
+.showday-one .nav-flip .nf{color:#fff!important;white-space:nowrap;font-weight:750;line-height:1.4}
+.showday-one .nav-flip .nf-en{color:#d9ccff!important;font-size:11px;opacity:0}
+@media(hover:hover){.showday-one .nav-flip:hover .nf-en,.showday-one .nav-flip:focus-visible .nf-en{opacity:1!important;transform:none!important}}
+@media(max-width:650px){.showday-one .one-hero-image{background-position:55% center!important}.showday-one .one-hero-shade{background:linear-gradient(90deg,rgba(6,10,28,.96),rgba(6,10,28,.70))!important}.showday-one .one-actions>button{min-width:0;width:100%;max-width:320px}}
