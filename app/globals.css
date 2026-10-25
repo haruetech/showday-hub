@@ -473,3 +473,26 @@ h1{font-size:clamp(35px,3.5vw,48px);line-height:1.22;letter-spacing:-.06em;margi
 @media (hover:none) {
   .showday-one .header .nav-right .nav-pill.nav-flip .nf-en {display:none!important;}
 }
+
+
+/* SHOWDAY approved 2026-10-25 visual revision — scoped to home only. */
+.showday-one{background:#080f20!important}
+.showday-one .header{background:#09182e!important;border-bottom-color:#243554!important}
+.showday-one .one-main{background:#080f20!important;padding-bottom:12px!important}
+.showday-one .one-hero{background:#09162d!important;isolation:isolate;overflow:hidden!important}
+.showday-one .one-hero-image{background-image:url('/images/showday-hero-refined.webp')!important;background-position:right center!important;background-size:cover!important;opacity:1!important;inset:0 0 0 25%!important}
+.showday-one .one-hero-shade{background:linear-gradient(90deg,#081427 0%,rgba(8,20,39,.98) 19%,rgba(8,20,39,.92) 26%,rgba(8,20,39,.5) 37%,rgba(8,20,39,.02) 54%,transparent 100%)!important}
+.showday-one .one-copy{position:relative;z-index:2;max-width:600px;padding:clamp(28px,4vh,44px) clamp(26px,4.3vw,75px)!important}
+.showday-one .one-copy h1{font-size:clamp(30px,2.55vw,45px)!important;line-height:1.25!important;letter-spacing:-.058em!important;white-space:nowrap}
+.showday-one .one-copy p{font-size:clamp(12px,.87vw,15px)!important;line-height:1.6}
+.showday-one .one-eyebrow{font-size:10px!important;letter-spacing:2.3px!important}
+.showday-one .one-service:nth-child(4),.showday-one .one-service:nth-child(4) .one-service-info{background:#173354!important}
+.showday-one .footer.ft{background:#0b1930!important;color:#d8e0f0!important;border-top:1px solid #2b3a57!important}
+.showday-one .footer.ft .ft-links a,.showday-one .footer.ft .ft-bottom,.showday-one .footer.ft .ft-biz{color:#c5d0e5!important}
+.showday-one .footer.ft .ft-links a:hover{color:#c1adff!important}
+.showday-one .footer.ft .ft-links,.showday-one .footer.ft .ft-bottom{border-color:#2a3854!important}
+/* Original photo-specific mask is disabled because this approved image uses a different arena position. */
+.showday-one .one-hero-image::after{display:none!important}
+.showday-one .one-hero::after{display:none!important}
+@media(max-width:1000px){.showday-one .one-hero-image{inset:0!important;background-position:58% center!important}.showday-one .one-hero-shade{background:linear-gradient(90deg,#081427f5,rgba(8,20,39,.72) 62%,rgba(8,20,39,.16))!important}.showday-one .one-copy h1{font-size:clamp(29px,4vw,42px)!important}}
+@media(max-width:650px){.showday-one .one-hero-image{inset:0!important;background-position:57% center!important;opacity:.7!important}.showday-one .one-hero-shade{background:linear-gradient(90deg,rgba(8,20,39,.96),rgba(8,20,39,.76))!important}.showday-one .one-copy{padding:38px 18px!important}.showday-one .one-copy h1{font-size:clamp(28px,7vw,37px)!important;white-space:normal}}
