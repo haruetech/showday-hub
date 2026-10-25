@@ -435,3 +435,41 @@ h1{font-size:clamp(35px,3.5vw,48px);line-height:1.22;letter-spacing:-.06em;margi
 }
 .showday-one .nav-flip .nf-en {font-size:clamp(10px,.85vw,13px)!important;white-space:nowrap!important;}
 .showday-one .one-card-en {font-size:clamp(11px,1vw,16px)!important;white-space:nowrap!important;}
+
+/* Final navigation fix: Korean normally, English ONLY on hover; never a white pill. */
+.showday-one .header .nav-right .nav-pill.nav-flip {
+  display:inline-grid!important;grid-template-columns:minmax(0,1fr);align-items:center;justify-items:center;
+  position:relative;overflow:hidden;background:transparent!important;
+  color:#fff!important;border-color:transparent!important;box-shadow:none!important;
+}
+.showday-one .header .nav-right .nav-pill.nav-flip:hover,
+.showday-one .header .nav-right .nav-pill.nav-flip:focus-visible {
+  background:rgba(167,139,250,.12)!important;
+  color:#fff!important;border-color:transparent!important;box-shadow:none!important;
+}
+.showday-one .header .nav-right .nav-pill.nav-flip .nf {
+  grid-area:1/1!important;display:block!important;position:relative!important;
+  text-align:center!important;white-space:nowrap!important;
+  -webkit-text-fill-color:currentColor!important;
+  transition:opacity .18s ease,transform .18s ease!important;
+}
+.showday-one .header .nav-right .nav-pill.nav-flip .nf-ko {
+  opacity:1!important;visibility:visible!important;transform:none!important;color:#fff!important;
+}
+.showday-one .header .nav-right .nav-pill.nav-flip .nf-en {
+  opacity:0!important;visibility:hidden!important;transform:translateY(5px)!important;
+  color:#fff!important;font-size:12px!important;text-shadow:0 0 8px rgba(167,139,250,.35)!important;
+}
+@media (hover:hover) {
+  .showday-one .header .nav-right .nav-pill.nav-flip:hover .nf-ko,
+  .showday-one .header .nav-right .nav-pill.nav-flip:focus-visible .nf-ko {
+    opacity:0!important;visibility:hidden!important;transform:translateY(-5px)!important;
+  }
+  .showday-one .header .nav-right .nav-pill.nav-flip:hover .nf-en,
+  .showday-one .header .nav-right .nav-pill.nav-flip:focus-visible .nf-en {
+    opacity:1!important;visibility:visible!important;transform:none!important;
+  }
+}
+@media (hover:none) {
+  .showday-one .header .nav-right .nav-pill.nav-flip .nf-en {display:none!important;}
+}
