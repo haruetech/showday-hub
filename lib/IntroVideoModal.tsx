@@ -4,7 +4,7 @@ import {useEffect, useState} from 'react';
 import {ArrowUpRight, PlayCircle, X, Youtube} from 'lucide-react';
 
 // Replace with the SHOWDAY YouTube video ID after upload, e.g. 'dQw4w9WgXcQ'.
-const SHOWDAY_YOUTUBE_VIDEO_ID = '';
+const SHOWDAY_YOUTUBE_VIDEO_ID = 'NoL_ORKxW6U';
 
 export default function IntroVideoModal(){
  const [open,setOpen]=useState(false);
