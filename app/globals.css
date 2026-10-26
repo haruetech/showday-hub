@@ -496,3 +496,8 @@ h1{font-size:clamp(35px,3.5vw,48px);line-height:1.22;letter-spacing:-.06em;margi
 .showday-one .one-hero::after{display:none!important}
 @media(max-width:1000px){.showday-one .one-hero-image{inset:0!important;background-position:58% center!important}.showday-one .one-hero-shade{background:linear-gradient(90deg,#081427f5,rgba(8,20,39,.72) 62%,rgba(8,20,39,.16))!important}.showday-one .one-copy h1{font-size:clamp(29px,4vw,42px)!important}}
 @media(max-width:650px){.showday-one .one-hero-image{inset:0!important;background-position:57% center!important;opacity:.7!important}.showday-one .one-hero-shade{background:linear-gradient(90deg,rgba(8,20,39,.96),rgba(8,20,39,.76))!important}.showday-one .one-copy{padding:38px 18px!important}.showday-one .one-copy h1{font-size:clamp(28px,7vw,37px)!important;white-space:normal}}
+
+/* 2026-10-26: approved new hero, asset stored separately for easy replacement */
+.showday-one .one-hero-image{background-image:url('/images/hero/showday-main-hero.webp')!important;background-size:cover!important;background-position:center center!important;inset:0!important;opacity:1!important}
+.showday-one .one-hero-shade{background:linear-gradient(90deg,#081126 0%,rgba(8,17,38,.97) 18%,rgba(8,17,38,.81) 30%,rgba(8,17,38,.26) 49%,rgba(8,17,38,0) 72%)!important}
+@media(max-width:650px){.showday-one .one-hero-image{background-position:57% center!important}.showday-one .one-hero-shade{background:linear-gradient(90deg,rgba(8,17,38,.96),rgba(8,17,38,.65))!important}}

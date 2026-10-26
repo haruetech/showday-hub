@@ -3,8 +3,8 @@
 import {useEffect, useState} from 'react';
 import {ArrowUpRight, PlayCircle, X, Youtube} from 'lucide-react';
 
-// SHOWDAY 공식 홍보영상 (YouTube 일부 공개 링크).
-const SHOWDAY_YOUTUBE_VIDEO_ID = 'NoL_ORKxW6U';
+// Replace with the SHOWDAY YouTube video ID after upload, e.g. 'dQw4w9WgXcQ'.
+const SHOWDAY_YOUTUBE_VIDEO_ID = '';
 
 export default function IntroVideoModal(){
  const [open,setOpen]=useState(false);
